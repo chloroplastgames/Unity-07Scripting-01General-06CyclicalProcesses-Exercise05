@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthBehavior : MonoBehaviour
 {
-    public delegate void HealthChangeHandler(float currentHealth);
 
-    public event HealthChangeHandler HealthChange = delegate { };
+    public UnityEvent<float> HealthChange;
 
     [SerializeField]
     private float _health;
